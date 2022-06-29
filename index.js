@@ -7,7 +7,7 @@ const fs = require('fs');
 const http = require('node:https');
 
 // functions
-// download that i copied & pasted from stackoverflow lol
+// download func that i copied and pasted from stackoverflow lol
 async function download(url, audioName) {
 	let file = fs.createWriteStream('./audios/' + audioName + '.ogg');
 	http.get(url, function(response) {
