@@ -7,6 +7,7 @@ const fs = require('fs');
 const http = require('node:https');
 
 // functions
+// download that i copied & pasted from stackoverflow lol
 async function download(url, audioName) {
 	let file = fs.createWriteStream('./audios/' + audioName + '.ogg');
 	http.get(url, function(response) {
@@ -57,7 +58,9 @@ async function getAudiosLocations(idArray, placeId, cookie) {
 	return toReturn
 }
 
+// starting shit
 async function main() {
+	console.log('starting process')
 	let locations = await getAudiosLocations(settings.audioIds, settings.placeId, settings.cookie);
 	locations.forEach(async function(url, index) {
 		download(url, index)
